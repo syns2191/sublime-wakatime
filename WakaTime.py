@@ -598,7 +598,7 @@ class DownloadCLI(threading.Thread):
         log(INFO, 'test override WakaTime')
         os = platform.system().lower().replace('darwin', 'mac')
         arch = '64' if sys.maxsize > 2**32 else '32'
-        return 'https://uc3d048b01f32563c7328439e43b.dl.dropboxusercontent.com/cd/0/get/A9AZQt1yEoLUKWwqn1RZ8QsHYj7yXl-gCuQOOPKLrZpaknhRG9FqMFZXuRM6x6sWgNAHuYGo2n754q6svLNL13UvMgU6woQW7LUV4zxKdscLKBE3seswDYMoiS9FNqEcDFw/file?dl=1#'
+        return 'https://uc9b6ec3085827653198b447c972.dl.dropboxusercontent.com/cd/0/get/A9HILGBe367k7c7HqlxKEyh_4JM6E8nrkrN98WkqpZaceDJF0XX720byiI0EXxlt6V3__gw5xRnAHC9I7Njt6I9IqAvbnuK8ymBt-x-Sa8_cXkOjqPxIgDyLrWudwbwu7Os/file#'
 
 
 def isCliInstalled():
