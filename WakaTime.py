@@ -249,7 +249,8 @@ class FetchStatusBarCodingTime(threading.Thread):
             cmd.append('--verbose')
         if self.proxy:
             cmd.extend(['--proxy', self.proxy])
-
+        log(DEBUG, 'find key')
+        log(DEBUG, self.api_key.encode('utf8'))
         log(DEBUG, ' '.join(obfuscate_apikey(cmd)))
         try:
             process = Popen(cmd, stdout=PIPE, stderr=STDOUT)
