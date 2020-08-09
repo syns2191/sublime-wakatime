@@ -596,11 +596,18 @@ class DownloadCLI(threading.Thread):
         log(INFO, 'Finished extracting wakatime-cli.')
 
     def _getCliUrl(self):
-        log(INFO, 'test override WakaTime')
         os = platform.system().lower().replace('darwin', 'mac')
         arch = '64' if sys.maxsize > 2**32 else '32'
-        return 'https://uc9b6ec3085827653198b447c972.dl.dropboxusercontent.com/cd/0/get/A9HILGBe367k7c7HqlxKEyh_4JM6E8nrkrN98WkqpZaceDJF0XX720byiI0EXxlt6V3__gw5xRnAHC9I7Njt6I9IqAvbnuK8ymBt-x-Sa8_cXkOjqPxIgDyLrWudwbwu7Os/file#'
-
+        dl = ''
+        if os == 'mac':
+            dl = 'https://dl.dropboxusercontent.com/s/ocp1m4ntqh4bw2g/wakatime-cli.zip?dl=0'
+        else:
+            dl = '{host}/{os}-x86-{arch}/current_version.txt'.format(
+                    host=S3_HOST,
+                    os=os,
+                    arch=arch,
+                )
+        return dl
 
 def isCliInstalled():
     return os.path.exists(API_CLIENT)
